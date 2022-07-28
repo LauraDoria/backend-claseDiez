@@ -1,0 +1,34 @@
+<div class="tableContainer">
+    <div class="tableMain">
+        <div class="tableHead">
+            <div class="tableCell">
+                <h3 class="tableColumnTitle">Nombre</h3>
+            </div>
+            <div class="tableCell">
+                <h3 class="tableColumnTitle">Precio</h3>
+            </div>
+            <div class="tableCell">
+                <h3 class="tableColumnTitle">Imagen</h3>
+            </div>
+        </div>
+        <div class="tableBody">
+            {{#if productos}} 
+                {{#each productos}}
+                    <div class="tableRow">
+                        <div class="tableCell">
+                            <p class="tableText">{{this.productName}}</p>
+                        </div>
+                        <div class="tableCell">
+                            <p class="tableText">${{this.productPrice}}</p>
+                        </div>
+                        <div class="tableCell">
+                            <img class="image" src="{{this.productThumbnail}}" alt="{{this.productName}}">
+                        </div>
+                    </div>
+			    {{/each}}     	
+            {{else}}
+                <p class="tableText">No hay productos para mostrar</p>
+            {{/if}}
+        </div>
+    </div>
+</div>
