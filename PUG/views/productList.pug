@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="../src/style.css")
+    title PUG PRODUCT LIST
+body(class="bodyContainer")
+    header(class="headerContainer")
+        h1(class="mainTitle") Lista de Productos
+    main(class="mainContaier")
+        div(class="navContainer")
+            button(onclick="window.location.href='/'", class="button") Cargar Productos
+        div(class="tableContainer")
+            div(class="tableMain")
+                div(class="tableHead")
+                    div(class="tableCell")
+                        h3(class="tableColumnTitle") Nombre
+                    div(class="tableCell")
+                        h3(class="tableColumnTitle") Precio
+                    div(class="tableCell")
+                        h3(class="tableColumnTitle") Imagen
+                div(class="tableBody")
+                    each product in productList
+                        div(class="tableRow")
+                            div(class="tableCell")
+                                p(class="tableText") #{product.productName}
+                            div(class="tableCell")
+                                p(class="tableText") $#{product.productPrice}
+                            div(class="tableCell")
+                                img(class="image", src="#{product.productThumbnail}", alt="#{product.productName}")

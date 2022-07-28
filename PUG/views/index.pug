@@ -1,0 +1,25 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="../src/style.css")
+        title PUG FORM
+    body(class="bodyContainer")
+        header(class="headerContainer")
+            h1(class="mainTitle") Formulario con PUG
+        main(class="mainContainer")
+            h2(class="sectionTitle") Cargá tus productos:
+            form(class="formContainer", action="/api/products", method="post")
+                label(class="inputLabel", for="productName") Nombre 
+                input(class="input", placeholder="Nombre  del producto", type="text", name="productName")
+                br
+                label(class="inputLabel", for="productPrice") Precio
+                input(class="input", placeholder="Precio  del producto", type="text", name="productPrice")
+                br 
+                label(class="inputLabel", for="productThumbnail") Imagen
+                input(class="input", placeholder="URL de la imagen del producto", type="text", name="productThumbnail")
+                br
+                input(class="button", type="submit", value="Cargar Producto")
+            div
+                button(onclick="window.location.href='/productos'", class="button") Ver Productos
